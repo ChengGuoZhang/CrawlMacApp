@@ -8,7 +8,7 @@ from download_app.download import download_file
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
-url_json_file = "soft_macx_cn_items.json"
+url_json_file = "json\\rj_baidu_com_items.json"
 
 
 def main():
