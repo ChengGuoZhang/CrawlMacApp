@@ -1,8 +1,6 @@
 import os
-
 from pip._vendor import requests
-
-from download_app.compress_7z import archive
+from compress_7z import archive
 from rename_sha256 import rename_sha256
 
 

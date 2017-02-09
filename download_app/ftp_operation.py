@@ -3,7 +3,7 @@ import sys
 import time
 from ftplib import FTP
 
-from download_app.compress_7z import *
+from compress_7z import *
 
 reload(sys)
 sys.setdefaultencoding('utf-8')

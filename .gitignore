@@ -75,3 +75,4 @@ target/
 
 # CrawlResult
 *.json
+crawled_soft_id.txt

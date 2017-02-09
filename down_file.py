@@ -3,8 +3,8 @@ import re
 import sys
 import time
 
+from download_app.ftp_operation import UpdateJson,UploadFtp
 from download_app.download import download_file
-from download_app.ftp_operation import UpdateJson, UploadFtp
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
