@@ -37,7 +37,7 @@ def ftp_upload(ftp_upload_file):
     ftp.quit()
 
 
-def UploadFtp(file_name,item):
+def upload_ftp(file_name, item):
     try:
         ftp_upload(file_name)
     except Exception, ex:
@@ -49,7 +49,7 @@ def UploadFtp(file_name,item):
         os.remove(file_name)
 
 
-def UpdateJson(items):
+def update_json(items):
     len_items = len(items)
     with open(url_json_file, 'w+') as jsonFile:
         jsonFile.write('[\n')

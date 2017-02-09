@@ -3,7 +3,7 @@ import re
 import sys
 import time
 
-from download_app.ftp_operation import UpdateJson,UploadFtp
+from download_app.ftp_operation import update_json,upload_ftp
 from download_app.download import download_file
 
 reload(sys)
@@ -36,20 +36,20 @@ def main():
                 item['download_http_error'] = True
 
                 print "[FAILED]   Downloading Failed url [" + download_link + "]            " + str(ex)
-                UpdateJson(items)
+                update_json(items)
             else:
                 item['is_download'] = True
                 item['download_time'] = time.strftime('%Y-%m-%d %X', time.localtime())
                 item['soft_sha256'] = result[0]
                 item['upload_file_name'] = result[1]
-                UpdateJson(items)
+                update_json(items)
                 # when finish download , upload them to the ftp server immidetely
-                UploadFtp(result[1], item)
-                UpdateJson(items)
+                upload_ftp(result[1], item)
+                update_json(items)
         elif item['is_upload_ftp'] == False:
             print "________________________________________________________________________________________________________________"
-            UploadFtp(item['upload_file_name'],item)
-            UpdateJson(items)
+            upload_ftp(item['upload_file_name'], item)
+            update_json(items)
 
 
 if __name__ == '__main__':
