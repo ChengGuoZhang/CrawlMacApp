@@ -57,7 +57,7 @@ class MacxSpider(Spider):
             soft_unique_id = id_num+date+str(len(id_num))
             soft_id.add(int(soft_unique_id))
 
-        with open("crawled_soft_id.txt","a+") as fp:
+        with open("soft_id\\soft_macx_cn_id.txt","a+") as fp:
             lines = fp.readlines()
             soft_id_txt = []
             for line in lines:

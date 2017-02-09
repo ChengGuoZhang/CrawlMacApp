@@ -21,9 +21,14 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapy_splash.SplashMiddleware': 725,
     'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
 }
+# custome the pipeline in each spider
 ITEM_PIPELINES = {
     'CrawlMacApp.pipelines.JsonWriterPipeline': 300,
 }
+
+
+
+
 SPIDER_MIDDLEWARES = {
     'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
 }

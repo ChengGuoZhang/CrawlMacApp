@@ -74,8 +74,8 @@ target/
 .idea/
 
 # CrawlResult
-*.json
-crawled_soft_id.txt
+json/
+soft_id/
 
 # Ftp Settings
 download_app/ftp_setting.json
