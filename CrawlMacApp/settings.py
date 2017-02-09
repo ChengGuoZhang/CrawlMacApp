@@ -17,16 +17,30 @@ NEWSPIDER_MODULE = 'CrawlMacApp.spiders'
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
     'CrawlMacApp.middlewares.RotateUserAgentMiddleware': 543,
+    'scrapy_splash.SplashCookiesMiddleware': 723,
+    'scrapy_splash.SplashMiddleware': 725,
+    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
 }
 ITEM_PIPELINES = {
     'CrawlMacApp.pipelines.JsonWriterPipeline': 300,
 }
+SPIDER_MIDDLEWARES = {
+    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
+}
+ROBOTSTXT_OBEY = True
+# setting to avoid been banned
+RETRY_ENABLED = False
+REDIRECT_ENABLED = False
+COOKIES_ENABLED = False
+# settings for splash
+DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
+SPLASH_URL = 'http://192.168.99.100:8050'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'CrawlMacApp (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
