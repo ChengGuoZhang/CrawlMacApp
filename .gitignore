@@ -76,3 +76,6 @@ target/
 # CrawlResult
 *.json
 crawled_soft_id.txt
+
+# Ftp Settings
+download_app/ftp_setting.json

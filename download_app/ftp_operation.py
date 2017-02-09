@@ -9,12 +9,16 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 url_json_file = "soft_macx_cn_items.json"
+ftp_setting_file = "ftp_setting.json"
 
 def ftp_upload(ftp_upload_file):
-    ftp_host_address = "10.40.148.102"
-    ftp_port = "21"
-    ftp_username = "sampleops"
-    ftp_pass = "bAeMHWTLHmJTTyLTCUE4tUtW"
+    with open(ftp_setting_file, 'r') as fetch_items:
+        items = json.load(fetch_items)
+
+    ftp_host_address = items[0]['ftp_host_address']
+    ftp_port = items[0]['ftp_port']
+    ftp_username = items[0]['ftp_username']
+    ftp_pass = items[0]['ftp_pass']
 
     ftp = FTP()
     ftp.set_debuglevel(0)
